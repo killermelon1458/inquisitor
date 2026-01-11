@@ -117,7 +117,7 @@ PERMS_PATH = pathlib.Path(__file__).with_name("inquisitor_perms.json")
 
 # IMPORTANT: Set to your server's usercache.json path
 # Example: "/home/minecraft/server/usercache.json"
-USERCACHE_PATH = pathlib.Path("/path/to/usercache.json")
+USERCACHE_PATH = pathlib.Path("/var/lib/docker/volumes/minecraft-server_mc_data/_data/usercache.json")
 
 PERMS = PermissionManager(PERMS_PATH, USERCACHE_PATH)
 PERMS.load()
@@ -209,6 +209,63 @@ def choose_message(result: str, success_file: str, discord_user, player: str, ve
 
     msg = get_message("failed_action", "inquisitor_action_failed.txt")
     return msg.format(discord_user=discord_user.name, player=player or "N/A")
+
+def _refresh_discord_names_in_perms_json(guild: discord.Guild) -> bool:
+    """
+    Keep inquisitor_perms.json human-readable by storing:
+      - discord_name (account username)
+      - global_name  (Discord display name if set)
+      - display_name (server nickname/display)
+    Returns True if file was modified.
+    """
+    if not guild:
+        return False
+
+    try:
+        data = {}
+        if PERMS_PATH.exists():
+            with open(PERMS_PATH, "r", encoding="utf-8") as f:
+                data = json.load(f) or {}
+
+        users = data.setdefault("users", {})
+        changed = False
+
+        for m in (guild.members or []):
+            uid = str(m.id)
+            u = users.get(uid)
+            if not isinstance(u, dict):
+                continue
+
+            # always keep these up to date
+            dn = m.name
+            gn = getattr(m, "global_name", None)
+            disp = getattr(m, "display_name", None)
+
+            if u.get("discord_name") != dn:
+                u["discord_name"] = dn
+                changed = True
+
+            # global_name can be None; store None explicitly so it's clear
+            if u.get("global_name") != gn:
+                u["global_name"] = gn
+                changed = True
+
+            if u.get("display_name") != disp:
+                u["display_name"] = disp
+                changed = True
+
+        if changed:
+            with open(PERMS_PATH, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2, sort_keys=True)
+                f.write("\n")
+            # keep in-memory PERMS consistent with disk
+            PERMS.load()
+
+        return changed
+
+    except Exception:
+        log.exception("perms: failed refreshing discord_name/global_name/display_name in JSON")
+        return False
 
 # ---------------------------
 # Target resolution + blockers
@@ -722,6 +779,10 @@ async def reload_perms_command(interaction: discord.Interaction):
         if changed:
             PERMS.save()
 
+        # NEW: write human-readable Discord names into inquisitor_perms.json
+        _refresh_discord_names_in_perms_json(interaction.guild)
+
+
     await interaction.followup.send("✅ Permissions reloaded (and missing members added as Guest).", ephemeral=True)
 
 
@@ -907,6 +968,10 @@ async def on_ready():
             if changed:
                 PERMS.save()
                 log.info("perms: added missing members as Guest (startup)")
+            # NEW: write human-readable Discord names into inquisitor_perms.json
+            if _refresh_discord_names_in_perms_json(g):
+                log.info("perms: refreshed discord_name/global_name/display_name (startup)")
+
         else:
             log.warning("perms: guild not cached; skipping startup ensure_all_members")
     except Exception:

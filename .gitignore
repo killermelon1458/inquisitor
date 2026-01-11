@@ -11,3 +11,7 @@ __pycache__/
 # OS junk
 Thumbs.db
 Desktop.ini
+
+#local test files
+rcon_test.py
+
