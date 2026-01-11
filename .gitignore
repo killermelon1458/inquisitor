@@ -1,0 +1,13 @@
+# Secrets
+inquisitor_token.py
+rcon_config.py
+
+# Runtime / generated
+logs/
+inquisitor_perms.json
+__pycache__/
+*.pyc
+
+# OS junk
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,20 @@
+{discord_user} has cast the final judgment, {player}. You are banished beyond return.
+The Inquisition has spoken: {player} is exiled forever by {discord_user}’s decree.
+{discord_user} commands it, and so it is done. {player}, you are banned.
+There is no appeal. {discord_user} has ended your time here, {player}.
+The gates close forever, {player}. {discord_user} has seen enough.
+By {discord_user}’s order, {player}, you are struck from this world.
+{player}, your name is erased. {discord_user} has made certain of it.
+The Inquisition tolerates no more. {discord_user} has banned you, {player}.
+You are undone, {player}. {discord_user} has ended your place among us.
+The record is sealed: {discord_user} has cast you out, {player}.
+{player}, the law has judged you unworthy. {discord_user} has enforced the sentence.
+Banished! {player}, {discord_user} has spoken the final word.
+There is no mercy, {player}. {discord_user} has struck your name from the rolls.
+By {discord_user}’s hand, {player}, you are condemned and banned.
+The Inquisition closes its eyes to you, {player}. {discord_user} has made it final.
+{player}, your actions are unforgivable. {discord_user} has ended your path here.
+No pardon, no forgiveness. {player}, {discord_user} has ended your stay forever.
+The gates are sealed with iron, {player}. {discord_user} decreed it.
+{player}, you are nothing more than a memory now. {discord_user} has banned you.
+By decree of {discord_user}, {player} is erased, banished, forgotten.

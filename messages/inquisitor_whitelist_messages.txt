@@ -1,0 +1,20 @@
+{discord_user} has vouched for you, {player}. I’ll allow you through this time… but I’ll be watching.
+Because {discord_user} spoke for you, {player}, you may enter. Don’t mistake this mercy for weakness.
+{player}, {discord_user} insists you belong here. Very well — but step out of line, and you’ll answer to me.
+Consider yourself fortunate, {player}. {discord_user} vouched for you. I’ll let you in, but the Inquisition does not forget.
+{discord_user} has put their name on the line for you, {player}. Do not squander it.
+{player}, you’re allowed in — for now. Thank {discord_user}, and tread carefully.
+The gates open for you, {player}, only because {discord_user} said so. I remain unconvinced.
+By {discord_user}’s word, {player}, you may enter. But the Inquisitor sees all.
+Do not disappoint us, {player}. {discord_user} vouched for you, and I’ve decided to permit this.
+Mercy is rare. {discord_user} earned it for you, {player}. Step wisely.
+{discord_user} has spoken in your favor, {player}. I’ll yield this once, but my patience is thin.
+{player}, your path is opened only because {discord_user} vouched for you. Prove yourself worthy.
+I would have denied you, {player}, but {discord_user} intervened. Do not make me regret this.
+The Inquisition bends for no one… yet {discord_user} has earned you this chance, {player}.
+{discord_user} shields you, {player}. But my eyes are on you nonetheless.
+{player}, know this: {discord_user} stood for you. That is the only reason you walk free today.
+Granting entry to {player} by {discord_user}’s request. Remember — every action is judged.
+{discord_user} vouched for you, {player}. You owe them your place here.
+{player}, you are permitted inside. {discord_user} may trust you… but I do not yet.
+For {discord_user}’s sake, I grant you passage, {player}. Do not mistake vigilance for kindness.

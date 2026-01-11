@@ -1,0 +1,20 @@
+{discord_user} has withdrawn your right to enter, {player}. The gates are closed to you now.
+{player}, your name no longer rests on the list. {discord_user} has spoken, and I enforce it.
+By order of {discord_user}, you are unbound, {player}. Do not attempt to return.
+The favor extended to you is revoked, {player}. {discord_user} has made it so.
+{player}, the trust once granted has been removed. {discord_user} demands it, and I obey.
+No longer welcome, {player}. {discord_user} has rescinded your passage.
+{discord_user} has ended your stay, {player}. You shall not pass the gates again.
+The ledger strikes your name, {player}. {discord_user} ordered it, and it is done.
+{player}, your time among us is over. {discord_user} ensured it.
+Your place is erased, {player}. {discord_user} called for it — and I enforced it.
+{discord_user} has cast you out, {player}. The gates are sealed.
+{player}, your name is forgotten from the list. {discord_user} decreed it so.
+The path you walked is barred, {player}. {discord_user} commanded it.
+By {discord_user}’s will, {player}, you are no longer recognized.
+The Inquisition does not waver. {discord_user} removed your name, {player}.
+{player}, you are no longer permitted. {discord_user} has withdrawn your access.
+{discord_user} has spoken. Your presence is denied, {player}.
+{player}, the mercy you once received is gone. {discord_user} revoked it.
+The record is clear: {discord_user} has removed you, {player}.
+Your entry is undone, {player}. {discord_user} closed the gates.

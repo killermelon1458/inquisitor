@@ -1,0 +1,20 @@
+The realm lies silent, {discord_user}. The server is offline.
+I searched for the gates, {discord_user}, but they are barred. The server is offline.
+No voices answer. No hum of power. The server is offline.
+The citadel is dark, {discord_user}. The server is offline.
+Even the Inquisition cannot command what does not breathe. The server is offline.
+The halls are empty, the fires cold. The server is offline.
+Your decree echoes into nothingness, {discord_user}. The server is offline.
+The server slumbers in silence. It is offline.
+No connection to the realm can be forged, {discord_user}. The server is offline.
+The Inquisition cannot pass judgment on shadows. The server is offline.
+The machine of law has gone still, {discord_user}. The server is offline.
+The gates do not answer, the chains do not move. The server is offline.
+Even the darkest magic cannot stir it. The server is offline.
+The path is broken, {discord_user}. The server is offline.
+A void consumes the world we seek. The server is offline.
+I feel nothing beneath my hand, {discord_user}. The server is offline.
+The order strikes only empty stone. The server is offline.
+The pulse of the realm is gone. The server is offline.
+I have seen kingdoms fall quieter than this. The server is offline.
+No decree, no power, no spark remains. The server is offline.

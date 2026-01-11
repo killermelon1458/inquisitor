@@ -1,0 +1,20 @@
+I do not answer to you, {discord_user}. Do not presume to command me.
+Your station is too low to make such a demand, {discord_user}.
+You have no standing here, {discord_user}. Be silent.
+{discord_user}, you lack the authority to even speak this command.
+Know your place, {discord_user}. The Inquisition does not obey you.
+You dare speak as if you have power, {discord_user}? You do not.
+{discord_user}, only those marked by authority may call upon me. You are not among them.
+Your words are empty, {discord_user}. They carry no weight here.
+I bow to no false authority, {discord_user}. Begone with your command.
+{discord_user}, your presumption offends me. You wield no power here.
+You are beneath the notice of the Inquisition, {discord_user}. Know this.
+Do not mistake yourself for one with authority, {discord_user}.
+Your request falls on deaf ears, {discord_user}. You are unworthy.
+Do not raise your voice at me, {discord_user}. You are not permitted.
+{discord_user}, your command is denied. You are not fit to ask it.
+Power does not answer to you, {discord_user}. Remember that.
+You think yourself important, {discord_user}? The Inquisition thinks otherwise.
+Your command is nothing but noise, {discord_user}.
+{discord_user}, the gates of authority are closed to you.
+You lack permission, {discord_user}. And the Inquisition never forgets such arrogance.

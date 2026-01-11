@@ -1,0 +1,10 @@
+{player}, by {discord_user}’s order, you are removed for now. You may return, but know that the Inquisition will be watching.
+{player}, you have been temporarily removed at {discord_user}’s command. This is not a ban, but do not take it lightly.
+The Inquisition has expelled you for now, {player}, as per {discord_user}’s order. You may return, but only under strict observation.
+{player}, you are kicked by {discord_user}’s decree. This is a temporary measure—return when you are prepared to follow the law.
+{discord_user} has requested your temporary removal, {player}. The Inquisitor allows you to return, but not without scrutiny.
+You are removed for now, {player}, by {discord_user}’s authority. This is a temporary measure—heed the rules upon your return.
+{player}, you are temporarily ejected at {discord_user}’s behest. You will be allowed back, but know that the Inquisition will be vigilant.
+{discord_user} has commanded your temporary removal, {player}. You may rejoin us, but understand that we are watching.
+{player}, {discord_user} has ordered you out for now. This is not a ban, but a stern warning from the Inquisition.
+You are removed by {discord_user}’s order, {player}. Return if you must, but know the Inquisition will be watching your every move.
