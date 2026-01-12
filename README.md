@@ -101,7 +101,7 @@ PREFIX = "!"
 
 ```python
 HOST = "127.0.0.1"
-PORT = 41968
+PORT = 25575
 PASSWORD = "your_rcon_password"
 ```
 

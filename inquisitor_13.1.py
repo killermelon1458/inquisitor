@@ -131,7 +131,6 @@ sync_to_discord_roles: bool = True
 # Map Discord role names -> Inquisitor role names (case-insensitive match)
 DISCORD_ROLE_TO_INQ_ROLE = {
     "guest": "Guest",
-    "memeber": "Member",  # keep your server's spelling
     "member": "Member",   # allow correct spelling too
     "mod": "Mod",
     "admin": "Owner",
