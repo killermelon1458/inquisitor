@@ -52,15 +52,62 @@ def vlog(msg: str, *a, **k):
         log.debug(msg, *a, **k)
 
 def log_exceptions(where: str):
-    """Decorator to always log exceptions with context."""
+    """
+    Decorator that:
+      - logs ALL bot command invocations at INFO (start + end) when called with a discord.Interaction
+      - always logs exceptions with traceback (ERROR) and re-raises
+    """
     def _wrap(fn):
         @functools.wraps(fn)
         async def _a(*args, **kwargs):
+            t0 = time.perf_counter()
+
+            # If this looks like a slash command (first arg is Interaction), log it at INFO.
+            interaction = args[0] if args else None
+            is_interaction = isinstance(interaction, discord.Interaction)
+
+            if is_interaction:
+                try:
+                    u = interaction.user
+                    g = interaction.guild
+                    ch = interaction.channel
+                    # best-effort command name
+                    cmd_name = getattr(getattr(interaction, "command", None), "name", None) or where
+
+                    # log the non-interaction args (usually command parameters)
+                    call_args = args[1:] if len(args) > 1 else ()
+                    log.info(
+                        "[CMD] start name=%s user=%s(%s) guild=%s channel=%s args=%r kwargs=%r",
+                        cmd_name,
+                        getattr(u, "name", "?"),
+                        getattr(u, "id", "?"),
+                        getattr(g, "id", None),
+                        getattr(ch, "id", None),
+                        call_args,
+                        kwargs,
+                    )
+                except Exception:
+                    # Never block command execution because logging failed
+                    log.info("[CMD] start name=%s (metadata_log_failed)", where)
+
             try:
-                return await fn(*args, **kwargs)
+                out = await fn(*args, **kwargs)
+
+                if is_interaction:
+                    dt_ms = int((time.perf_counter() - t0) * 1000)
+                    try:
+                        cmd_name = getattr(getattr(interaction, "command", None), "name", None) or where
+                    except Exception:
+                        cmd_name = where
+                    log.info("[CMD] end   name=%s status=ok elapsed_ms=%s", cmd_name, dt_ms)
+
+                return out
+
             except Exception:
+                # Always log the exception with traceback
                 log.exception("Unhandled exception in %s", where)
                 raise
+
         return _a
     return _wrap
 
@@ -98,7 +145,7 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 
-import mc_rcon_beta as mc_rcon
+import mc_tools as mc_rcon
 import rcon_config
 from message_manager import get_message
 from inquisitor_token import INQUISITOR_TOKEN, GUILD_ID, PREFIX
@@ -154,7 +201,9 @@ PERMS.load()
 # --- Init RCON ---
 with hang_watch("RCON set_rcon_config (connect-on-init?)", seconds=15):
     log.info("RCON: applying config host=%s port=%s", getattr(rcon_config, "HOST", "?"), getattr(rcon_config, "PORT", "?"))
-    mc_rcon.set_rcon_config(rcon_config.HOST, rcon_config.PORT, rcon_config.PASSWORD)
+    mc_rcon.set_rcon_config(rcon_config.HOST, rcon_config.PORT, rcon_config.PASSWORD,rcon_connection_logging=True)
+mc_rcon.set_rcon_verbose(VERBOSE)
+
 log.info("RCON: config applied")
 
 # --- Discord Bot ---
